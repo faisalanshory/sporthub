@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Wrench, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -28,11 +29,9 @@ export default function AdminComingSoonPage() {
         </CardContent>
       </Card>
 
-      <Button asChild size="lg" className="shadow-lg shadow-primary/20">
-        <Link href="/admin">
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Dashboard
-        </Link>
-      </Button>
+      <Link href="/admin" className={cn(buttonVariants({ size: "lg" }), "shadow-lg shadow-primary/20")}>
+        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Dashboard
+      </Link>
     </div>
   );
 }

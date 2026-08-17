@@ -21,7 +21,6 @@ export async function POST(req: Request) {
         title,
         slug: `${slug}-${Date.now()}`,
         content,
-        excerpt: content.substring(0, 150) + "...",
         coverImage: coverImage || "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800",
         authorId: admin.id,
       }

@@ -46,7 +46,7 @@ export default async function AdminVenuePage() {
               <div className="space-y-2">
                 <Label>Full Address</Label>
                 <div className="flex gap-2">
-                  <Input defaultValue={venue.address} />
+                  <Input defaultValue={venue.address || ""} />
                   <Button variant="outline" size="icon" className="shrink-0">
                     <MapPin className="w-4 h-4" />
                   </Button>

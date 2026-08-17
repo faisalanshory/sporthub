@@ -229,7 +229,7 @@ async function main() {
         create: {
           amount: 500000,
           method: PaymentMethod.CREDIT_CARD,
-          status: PaymentStatus.PAID,
+          status: PaymentStatus.SUCCESS,
           paidAt: pastDate
         }
       },
@@ -253,7 +253,7 @@ async function main() {
         create: {
           amount: 250000,
           method: PaymentMethod.BANK_TRANSFER,
-          status: PaymentStatus.PAID,
+          status: PaymentStatus.SUCCESS,
           paidAt: pastDate
         }
       },
