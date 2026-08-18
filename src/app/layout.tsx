@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "SportHub | Premium Sports Venue Booking",
+  title: "AKC Padel | Premium Padel Court Booking",
   description: "Find your court. Pick your time. Start playing.",
 };
 

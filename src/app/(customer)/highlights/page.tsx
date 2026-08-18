@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Search, PlayCircle, Clock, CalendarDays } from "lucide-react";
+import { Search, Clock, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function HighlightsPage() {
@@ -26,7 +26,6 @@ export default function HighlightsPage() {
       duration: "0:45",
       matchCode: matchCode || "BKG-A1B2",
       date: "25 Aug 2024",
-      thumbnail: "bg-slate-800",
     },
     {
       id: "vid-2",
@@ -34,7 +33,6 @@ export default function HighlightsPage() {
       duration: "0:12",
       matchCode: matchCode || "BKG-A1B2",
       date: "25 Aug 2024",
-      thumbnail: "bg-slate-700",
     },
     {
       id: "vid-3",
@@ -42,7 +40,6 @@ export default function HighlightsPage() {
       duration: "1:05",
       matchCode: matchCode || "BKG-A1B2",
       date: "25 Aug 2024",
-      thumbnail: "bg-slate-900",
     }
   ];
 
@@ -86,13 +83,39 @@ export default function HighlightsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {highlights.map((clip) => (
               <Card key={clip.id} className="overflow-hidden hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300 group">
-                {/* Dummy Video Player Area */}
-                <div className={`relative aspect-video ${clip.thumbnail} flex items-center justify-center cursor-not-allowed group-hover:opacity-90 transition-opacity`}>
-                  <PlayCircle className="w-16 h-16 text-white/50 group-hover:text-white/80 transition-colors" />
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded font-mono">
-                    {clip.duration}
-                  </div>
-                  <div className="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
+                {/*
+                  Crop 8% atas & 8% bawah (watermark area):
+                  - Container tinggi = 84% dari aspect-ratio 16:9 (56.25% * 0.84)
+                  - Video height = 119.05% (100/84*100) → video lebih tinggi dari container
+                  - Video top = -9.52% (8/84*100) → geser ke atas agar 8% atas terpotong
+                  - overflow:hidden → 8% atas dan 8% bawah tidak terlihat
+                */}
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    paddingBottom: "calc(56.25% * 0.84)",
+                    overflow: "hidden",
+                    backgroundColor: "#0f172a",
+                  }}
+                >
+                  <video
+                    src="/vid.mp4"
+                    controls
+                    playsInline
+                    style={{
+                      position: "absolute",
+                      top: "-9.52%",
+                      left: 0,
+                      width: "100%",
+                      height: "119.05%",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <div
+                    style={{ pointerEvents: "none" }}
+                    className="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm"
+                  >
                     AI Tracking Active
                   </div>
                 </div>
@@ -109,7 +132,7 @@ export default function HighlightsPage() {
           </div>
 
           <div className="mt-8 p-4 bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800 rounded-xl text-center text-sm text-muted-foreground">
-            <p>Note: Video playback is disabled in this demo version.</p>
+            <p>Highlight clips dari pertandingan Anda — watermark dipotong otomatis.</p>
           </div>
         </div>
       )}

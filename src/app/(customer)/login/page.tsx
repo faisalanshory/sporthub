@@ -48,10 +48,10 @@ export default function LoginPage() {
 
   const handleDemoFill = (role: "ADMIN" | "CUSTOMER") => {
     if (role === "ADMIN") {
-      setEmail("admin@sporthub.demo");
+      setEmail("admin@AKC Padel.demo");
       setPassword("Admin123!");
     } else {
-      setEmail("customer@sporthub.demo");
+      setEmail("customer@AKC Padel.demo");
       setPassword("Customer123!");
     }
   };
