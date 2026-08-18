@@ -121,6 +121,7 @@ export default async function CustomerLayout({
                           <User className="w-4 h-4 shrink-0" /> My Profile
                         </Link>
                       )}
+                      <CustomerLogoutButton className="flex items-center justify-start gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-red-500 hover:bg-accent hover:text-red-600 transition-colors h-auto" />
                     </>
                   ) : (
                     <Link href="/login" className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-foreground hover:bg-accent hover:text-primary transition-colors">

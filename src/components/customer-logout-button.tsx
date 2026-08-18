@@ -4,7 +4,7 @@ import { LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
-export function CustomerLogoutButton() {
+export function CustomerLogoutButton({ className }: { className?: string }) {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -13,8 +13,8 @@ export function CustomerLogoutButton() {
   };
 
   return (
-    <Button variant="ghost" size="sm" onClick={handleLogout}>
-      <LogOut className="w-4 h-4 mr-2" />
+    <Button variant="ghost" size="sm" className={className} onClick={handleLogout}>
+      <LogOut className="w-4 h-4 mr-2 shrink-0" />
       Log out
     </Button>
   );
