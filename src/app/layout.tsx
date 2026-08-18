@@ -19,13 +19,18 @@ export const metadata: Metadata = {
   description: "Find your court. Pick your time. Start playing.",
 };
 
+import NextTopLoader from 'nextjs-toploader';
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NextTopLoader color="#0ea5e9" showSpinner={false} />
+        {children}
+      </body>
     </html>
   );
 }
