@@ -54,10 +54,10 @@ export function MobileNav({ userName, userEmail }: { userName: string, userEmail
           <div className="relative flex flex-col w-64 max-w-[80vw] h-full bg-background border-r shadow-xl animate-in slide-in-from-left duration-200">
             <div className="flex items-center justify-between p-4 border-b">
               <Link href="/admin" onClick={() => setIsOpen(false)} className="font-bold text-xl tracking-tight text-primary flex items-center gap-2">
-                <span className="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center text-lg">
-                  S
-                </span>
-                SportHub
+                <div className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                  A
+                </div>
+                <span className="font-bold text-lg text-slate-900 dark:text-white">AKC Padel</span>
               </Link>
               <button onClick={() => setIsOpen(false)} className="p-2 -mr-2 text-slate-500 hover:text-slate-900 dark:hover:text-white">
                 <X className="w-5 h-5" />

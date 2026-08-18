@@ -43,9 +43,9 @@ export default async function CustomerLayout({
           <div className="flex items-center gap-8">
             <Link href="/" className="font-bold text-xl tracking-tight text-primary flex items-center gap-2">
               <span className="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center text-lg">
-                S
+                A
               </span>
-              SportHub
+              AKC Padel
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <NavLinks />
@@ -88,9 +88,9 @@ export default async function CustomerLayout({
                 {/* Mobile Nav Header */}
                 <div className="flex items-center gap-3 px-6 py-5 border-b border-border">
                   <span className="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold">
-                    S
+                    A
                   </span>
-                  <span className="font-bold text-lg tracking-tight text-primary">SportHub</span>
+                  <span className="font-bold text-lg tracking-tight text-primary">AKC Padel</span>
                 </div>
 
                 {/* Nav Links */}
@@ -152,9 +152,9 @@ export default async function CustomerLayout({
             <div className="space-y-4 md:col-span-1">
               <span className="font-bold text-xl tracking-tight text-primary flex items-center gap-2">
                 <span className="w-6 h-6 rounded-md bg-primary text-primary-foreground flex items-center justify-center text-xs">
-                  S
+                  A
                 </span>
-                SportHub
+                AKC Padel
               </span>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The premium destination for your sporting activities. Book courts effortlessly, join communities, and play more.

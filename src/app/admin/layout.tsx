@@ -53,7 +53,7 @@ export default async function AdminLayout({
         <div className="h-16 flex items-center px-6 border-b">
           <Link href="/admin" className="font-bold text-xl tracking-tight text-primary flex items-center gap-2">
             <span className="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center text-lg">
-              S
+              A
             </span>
             AKC Padel Admin
           </Link>
@@ -101,7 +101,7 @@ export default async function AdminLayout({
       <main className="flex-1 flex flex-col min-w-0">
         <header className="h-16 flex items-center justify-between px-6 border-b bg-background md:hidden">
           <Link href="/admin" className="font-bold text-xl text-primary flex items-center gap-2">
-            <span className="w-6 h-6 rounded bg-primary text-primary-foreground flex items-center justify-center text-xs">S</span>
+            <span className="w-6 h-6 rounded bg-primary text-primary-foreground flex items-center justify-center text-xs">A</span>
             AKC Padel Admin
           </Link>
           <MobileNav userName={session.name} userEmail={session.email} />
